@@ -17,17 +17,29 @@
                 <el-avatar :icon="UserFilled" />
                 <template #dropdown>
                     <el-dropdown-menu>
-                        <el-dropdown-item>Action 1</el-dropdown-item>
-                        <el-dropdown-item>Action 2</el-dropdown-item>
-                        <el-dropdown-item>Action 3</el-dropdown-item>
-                        <el-dropdown-item>Action 4</el-dropdown-item>
-                        <el-dropdown-item>Action 5</el-dropdown-item>
+                        <el-dropdown-item>
+                            <el-icon><Postcard /></el-icon>
+                            <p>在线简历</p>
+                        </el-dropdown-item>
+                        <el-dropdown-item>
+                            <el-icon><Goods /></el-icon>
+                            <p>我的订单</p>
+                        </el-dropdown-item>
+                        <el-dropdown-item>
+                            <el-icon><AlarmClock /></el-icon>
+                            <p>历史浏览</p>
+                        </el-dropdown-item>
+                        <el-dropdown-item>
+                            <el-icon><Star /></el-icon>
+                            <p>我的收藏</p>
+                        </el-dropdown-item>
                     </el-dropdown-menu>
                 </template>
             </el-dropdown>
             <el-icon style="font-size: 30px; margin-right: 20px; color: #606266;"><Bell /></el-icon>
         </div>
     </div>
+    <RouterView />
 </template>
 
 <script setup lang="ts">
@@ -57,6 +69,8 @@ import { UserFilled } from '@element-plus/icons-vue'
 .logotext {
     font-size: 30px;
     margin-left: 40px;
+    color: #FFF;
+    font-weight: bold;
 }
 
 .workDesktop {

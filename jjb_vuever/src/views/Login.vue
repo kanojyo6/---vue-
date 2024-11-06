@@ -13,10 +13,10 @@
                 <div style="display: flex; flex-direction: column; align-items: center; width: 80%;">
                     <p style="font-size: 30px; font-weight: bold; color: #42b883;">登录系统</p>
                     <el-form-item label="用户名：">
-                        <el-input style="width: 250px;" v-model="data.username" placeholder="请输入用户名" />
+                        <el-input class="loginInput" style="width: 250px;" v-model="data.username" placeholder="请输入用户名" />
                     </el-form-item>
                     <el-form-item label="密码：" style="margin-left: 16px;">
-                        <el-input type="password" style="width: 250px;" v-model="data.password" placeholder="请输入密码" />
+                        <el-input class="loginInput" type="password" style="width: 250px;" v-model="data.password" placeholder="请输入密码" />
                     </el-form-item>
                     <div style="display: flex; justify-content: space-around;">
                         <el-button class="loginForm-button" @click="login">登录</el-button>
@@ -57,6 +57,21 @@
     color: #42b883;
     background-color: #fff;
 }
+
+.loginInput {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    border: silver solid 1px;
+    transition: all 0.3s;
+}
+
+.loginInput:hover {
+    border: #42b883 solid 1px;
+}
+
+.loginInput:focus {
+    border: #42b883 solid 2px;
+}
 </style>
 
 <script setup lang="ts">
@@ -69,7 +84,7 @@ const data = reactive({
 })
 
 const login = () => {
-    router.push('/main')
+    router.push('/main/admin')
     console.log(data.username)
     console.log(data.password)
 }

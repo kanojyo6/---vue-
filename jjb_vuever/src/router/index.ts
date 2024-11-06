@@ -13,9 +13,17 @@ const router = createRouter({
       component: Login
     },
     {
-      path: '/main',
+      path: '/main/:username',
       name: 'main',
-      component: Header
+      component: Header,
+      children: [
+        {
+          path: '',
+          name: 'admin',
+          component: Main
+        }
+
+      ]
     },
     {
       path: '/mail',
